@@ -1,8 +1,8 @@
 {
-  "name": "my_profolio",
+  "name": "ycloudo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ycloudo.github.io/",
+  "homepage": "https://ycloudo.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [
