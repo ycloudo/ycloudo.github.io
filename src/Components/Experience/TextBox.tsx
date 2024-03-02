@@ -18,7 +18,8 @@ const TextBox = (props: { key: string; data: TextDS }) => {
 };
 
 const Customli = styled.li`
-  font-size: 16px;
+  font-size: 24px;
+  padding-bottom: 0.8rem;
 `;
 
 export default TextBox;

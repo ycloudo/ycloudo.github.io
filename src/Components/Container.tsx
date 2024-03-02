@@ -14,7 +14,6 @@ const StyledContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
 `;
 
 export default StyledContainer;

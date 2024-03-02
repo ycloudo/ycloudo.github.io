@@ -17,6 +17,7 @@ const Project = () => {
 };
 
 const CustomCtr = styled(Container)`
+  margin-top: 3rem;
   flex-direction: column;
   gap: 10px;
 `;

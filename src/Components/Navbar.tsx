@@ -1,9 +1,7 @@
 // import { useEffect, } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import Photobox from './Photobox';
-import GitHubImg from '../Assets/github.png';
-import LinkedInImg from '../Assets/linkedin.png';
+import Container from '../Components/Container';
 
 const Navbar = () => {
   const location = useLocation();
@@ -12,7 +10,7 @@ const Navbar = () => {
     return location.pathname === path;
   };
   return (
-    <Container>
+    <CostumCtr>
       <CustomLink to="/" $active={isActive('/')}>
         Home
       </CustomLink>
@@ -22,23 +20,12 @@ const Navbar = () => {
       <CustomLink to="/experience" $active={isActive('/experience')}>
         Experience
       </CustomLink>
-      <ContactBox>
-        <a href="https://github.com/">
-          <Photobox url={GitHubImg} width={2} height={2} radius={0} />
-        </a>
-        <a href="https://github.com/">
-          <Photobox url={LinkedInImg} width={2} height={2} radius={0} />
-        </a>
-      </ContactBox>
-    </Container>
+    </CostumCtr>
   );
 };
 
-const Container = styled.div`
+const CostumCtr = styled(Container)`
   background-color: #8cb9bd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const CustomLink = styled(Link)<{ $active: boolean }>`
@@ -46,6 +33,10 @@ const CustomLink = styled(Link)<{ $active: boolean }>`
   color: black;
   margin: 1rem;
   position: relative;
+  font-size: 26px;
+  @media screen and (max-width: 1000px) {
+    font-size: 16px;
+  }
 
   &:after {
     content: '';
@@ -61,14 +52,6 @@ const CustomLink = styled(Link)<{ $active: boolean }>`
     transition: width 0.3s ease;
     width: 100%;
   }
-`;
-
-const ContactBox = styled.div`
-  position: absolute;
-  right: 1rem;
-  gap: 0.5rem;
-  display: flex;
-  justify-content: space-evenly;
 `;
 
 export default Navbar;

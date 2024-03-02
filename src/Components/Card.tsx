@@ -13,7 +13,7 @@ const Card = ({ className, children }: CardProps) => {
 const Content = styled(Card)`
   display: flex;
   justify-content: start;
-  width: 70%;
+  width: 60%;
   background-color: aliceblue;
   padding: 1rem;
   border-radius: 10px;
