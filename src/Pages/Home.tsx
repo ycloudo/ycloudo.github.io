@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import GitHubImg from '../Assets/github.png';
 import LinkedInImg from '../Assets/linkedin.png';
 import FBImg from '../Assets/fb.png';
+import Avatar from '../Assets/avatar.jpg';
 import Card from '../Components/Card';
 import Photobox from '../Components/Photobox';
 import Container from '../Components/Container';
@@ -9,23 +10,37 @@ import Container from '../Components/Container';
 const Home = () => {
   return (
     <CustomCtr>
-      <Card>
+      <CustomCard>
+        <AvatarBox src={Avatar} alt="snapshot" />
         <Text>
-          <h2>My name is Eric, Yao Yun-Cheng, </h2>
+          <h2>Hi, my name is Eric | Yao Yun-Cheng </h2>
           <p>
-            I am a master's degree student majoring in Management Information
+            I'm a master's degree student majoring in Management Information
             Systems at National Cheng Chi University.
           </p>
+          <p>
+            I possess experience in machine learning, frontend, and backend
+            development. In my free time, I enjoy traveling, photography, and
+            playing volleyball.
+          </p>
         </Text>
-      </Card>
+      </CustomCard>
       <ContactBox>
-        <a href="https://github.com/">
+        <a href="https://github.com/ycloudo" target="_blank" rel="noreferrer">
           <Photobox url={GitHubImg} width={45} height={45} radius={0} />
         </a>
-        <a href="https://github.com/">
+        <a
+          href="http://www.linkedin.com/in/cloudo"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Photobox url={LinkedInImg} width={45} height={45} radius={0} />
         </a>
-        <a href="https://github.com/">
+        <a
+          href="https://www.facebook.com/profile.php?id=100003822360344"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Photobox url={FBImg} width={45} height={45} radius={0} />
         </a>
       </ContactBox>
@@ -33,12 +48,27 @@ const Home = () => {
   );
 };
 
+const AvatarBox = styled.img`
+  width: 20%;
+  border-radius: 10px;
+  @media screen and (max-width: 1000px) {
+    width: 40%;
+  }
+`;
+
 const Text = styled.div`
   margin-left: 2rem;
   font-size: 24px;
   @media screen and (max-width: 1000px) {
     font-size: 14px;
   }
+`;
+
+const CustomCard = styled(Card)`
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+  align-items: center;
 `;
 
 const CustomCtr = styled(Container)`

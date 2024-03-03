@@ -17,18 +17,25 @@ const ContentBox = (props: { key: string; data: ContentDS }) => {
   const s_width = `${100 / s_len}%`;
   return (
     <CustomCard>
-      <div style={{ display: 'flex' }}>
-        <a href={data.githubURL} style={{ marginRight: '0.5rem' }}>
+      <Title>
+        <a
+          href={data.githubURL}
+          style={{ marginRight: '0.5rem' }}
+          target="_blank"
+          rel="noreferrer"
+        >
           <Photobox url={githublink} width={30} height={30} radius={0} />
         </a>
         <b>{data.name}</b>
-        {data.techniques.map((t): string => ` | ${t}`)}
-      </div>
+        <p>{data.techniques.map((t): string => ` | ${t}`)}</p>
+      </Title>
       <div style={{ display: 'flex' }}>
         {s_len !== 0
-          ? data.snapshot.map((s) => (
-              <img src={s} alt="snapshot" width={s_width} key={uuidv4()} />
-            ))
+          ? data.snapshot.map((s) =>
+              s === '' ? null : (
+                <img src={s} alt="snapshot" key={uuidv4()} width={s_width} />
+              )
+            )
           : null}
       </div>
     </CustomCard>
@@ -42,6 +49,14 @@ const CustomCard = styled(Card)`
   @media screen and (max-width: 1000px) {
     font-size: 14px;
   }
+  @media screen and (max-width: 50) {
+    font-size: 8px;
+  }
+`;
+
+const Title = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export default ContentBox;

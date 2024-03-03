@@ -20,6 +20,9 @@ const TextBox = (props: { key: string; data: TextDS }) => {
 const Customli = styled.li`
   font-size: 24px;
   padding-bottom: 0.8rem;
+  @media screen and (max-width: 1000px) {
+    font-size: 14px;
+  }
 `;
 
 export default TextBox;
