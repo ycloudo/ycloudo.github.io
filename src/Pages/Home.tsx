@@ -52,7 +52,7 @@ const AvatarBox = styled.img`
   width: 20%;
   border-radius: 10px;
   @media screen and (max-width: 1000px) {
-    width: 40%;
+    width: 60%;
   }
 `;
 

@@ -14,11 +14,11 @@ const Navbar = () => {
       <CustomLink to="/" $active={isActive('/')}>
         Home
       </CustomLink>
-      <CustomLink to="/project" $active={isActive('/project')}>
-        Projects
-      </CustomLink>
       <CustomLink to="/experience" $active={isActive('/experience')}>
         Experience
+      </CustomLink>
+      <CustomLink to="/project" $active={isActive('/project')}>
+        Projects
       </CustomLink>
     </CostumCtr>
   );
@@ -26,6 +26,7 @@ const Navbar = () => {
 
 const CostumCtr = styled(Container)`
   background-color: #8cb9bd;
+  width: auto;
 `;
 
 const CustomLink = styled(Link)<{ $active: boolean }>`

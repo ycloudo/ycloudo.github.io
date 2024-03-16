@@ -18,14 +18,17 @@ const ContentBox = (props: { key: string; data: ContentDS }) => {
   return (
     <CustomCard>
       <Title>
-        <a
-          href={data.githubURL}
-          style={{ marginRight: '0.5rem' }}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Photobox url={githublink} width={30} height={30} radius={0} />
-        </a>
+        {data.githubURL.length === 0 ? null : (
+          <a
+            href={data.githubURL}
+            style={{ marginRight: '0.5rem' }}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Photobox url={githublink} width={30} height={30} radius={0} />
+          </a>
+        )}
+
         <b>{data.name}</b>
         <p>{data.techniques.map((t): string => ` | ${t}`)}</p>
       </Title>
